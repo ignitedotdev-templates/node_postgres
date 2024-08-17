@@ -19,7 +19,9 @@ app.use(express.json());
 
 // Simple route to get user data
 app.get('/', (req, res) => {
-    return res.json("hello").status(200);
+    return res.status(200).send({
+        message: "hello",
+    });
 });
 
 // Route to get a single user by ID

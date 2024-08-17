@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "express": "^4.19.2",
+    "faker": "^6.6.6",
     "pg": "^8.12.0"
   }
 }

@@ -19,6 +19,7 @@ app.use(express.json());
 
 // Simple route to get user data
 app.get('/', (req, res) => {
+    console.log('Request received at /');
     return res.status(200).send({
         message: "hello"
     });
@@ -51,16 +52,15 @@ app.get('/users', async (req, res) => {
     }
 });
 
-// Route to generate 1000 users with random names
 app.post('/generate-users', async (req, res) => {
     const numberOfUsers = 1000;
     const users = [];
 
     for (let i = 0; i < numberOfUsers; i++) {
         users.push({
-            name: faker.name.findName(),
+            name: faker.person.fullName(),  // Use the updated method
             email: faker.internet.email(),
-            age: faker.datatype.number({ min: 18, max: 99 }),
+            age: faker.number.int({ min: 18, max: 99 }),
             created_at: new Date().toISOString()
         });
     }

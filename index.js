@@ -1,9 +1,13 @@
 const express = require('express');
 const { Pool } = require('pg');
 const { faker } = require('@faker-js/faker');
+const cors = require('cors');  // Import the cors package
 
 // Create an instance of express
 const app = express();
+
+// Apply the CORS middleware
+app.use(cors());
 
 // PostgreSQL connection configuration
 const pool = new Pool({

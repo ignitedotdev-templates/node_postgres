@@ -15,6 +15,12 @@ const pool = new Pool({
 
 
 // Simple route to get user data
+app.get('/', async (req, res) => {
+    return res.json("hello").status(200)
+});
+
+
+// Simple route to get user data
 app.get('/user/:id', async (req, res) => {
     const userId = req.params.id;
     try {

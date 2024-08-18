@@ -56,8 +56,8 @@ app.get('/users', async (req, res) => {
     }
 });
 
-app.post('/generate-users', async (req, res) => {
-    const numberOfUsers = 1000;
+app.post('/generate-users/:count', async (req, res) => {
+    const numberOfUsers = req.params.count;
     const users = [];
 
     for (let i = 0; i < numberOfUsers; i++) {
